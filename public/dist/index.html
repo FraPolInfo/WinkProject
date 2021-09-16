@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Homepage</title>
+</head>
+<body>
+	<div align='center'>
+		<form id='postForm'>
+			<input type="text" id="postTitle" placeholder="Titolo del Post"><br>
+			<textarea id="postBody" name="comment" placeholder ="Scrivi qualcosa..."></textarea><br>
+			<input type="text" id="postHashtags" placeholder="Lista degli Hashtags"><br>
+			<input type="submit" value="Pubblica">
+			<hr>
+		</form> 
+	</div>
+
+	<div align='center'>
+		<form id='hashFind'>
+			<label>Cerca per Hashtags:</label>
+			<input type="text" id="hashFindBar" placeholder="Non servono le virgole!">
+			<input type="submit" value="Cerca">
+		</form> 
+		<button id="listBtn">Ricarica</button>
+		<hr>
+	</div>
+
+	<div id='postList' align='center'></div>
+
+	<script src="index.js"></script>
+</body>
+</html>
