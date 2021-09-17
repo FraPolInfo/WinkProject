@@ -43,7 +43,6 @@ Aggiunge un elemento al database contenuto del body della chiamata passata
 
 ### router.post('/deleteOne', function)
 Elimina un elemento dal database di id corrispondente a quello passato nel body della chiamata.
-( Lo stesso risultato poteva essere ottenuto con una chiamata .delete invece di .post, ma ho mantenuto la post per utilizzare lo stesso tipo di chiamate e lasciare all'implementazione la cancellazione)
 
 ## Front End
 Il front end viene realizzato in Typescript nel file *public/src/index.ts*
