@@ -12,6 +12,7 @@ Una volta installato è sufficiente raggiungere la cartella in cui è stato clon
 ```
 Npm run dev
 ```
+Le librerie utilizzate per MondoDB ed Express sono gestite automaticamente da npm dal file *package.json* e non devono essere scaricate separatamente.
 ## Overwiev 
 Questo progetto relizza un servizio di backend basato su api restful. 
 
@@ -21,6 +22,9 @@ Le Api vengono implementate nella classe *routers/api/Router.js*
 
 Le pagine Html offerte sono contenute nella cartella *public*. 
 *public/src* contiene il file di Typescript, *public/dist* è la cartella statica che contiene la pagina html che viene mostrata a front-end.
+
+L'applicazione viene offerta su "http://localhost:5000/". La porta 5000 viene sovrascritta dalla variabile port dell'environment utilizzato, come specificato dalla variabile process.env.PORT
+
 ## Back End
 Per la realizzazione del backend è stato utilizzato Node.js e il framework Express, insieme al database noSql MongoDb per la realizazione dello strato di persistenza.
 
@@ -41,4 +45,16 @@ Aggiunge un elemento al database contenuto del body della chiamata passata
 Elimina un elemento dal database di id corrispondente a quello passato nel body della chiamata.
 ( Lo stesso risultato poteva essere ottenuto con una chiamata .delete invece di .post, ma ho mantenuto la post per utilizzare lo stesso tipo di chiamate e lasciare all'implementazione la cancellazione)
 
+## Front End
+Il front end viene realizzato in Typescript nel file *public/src/index.ts*
 
+Le chiamate vengono gestite dal metodo asincrono fetch() che restituisce una promise contenendo il risultato della chiamata. I metodi utilizzati sono i seguenti;
+
+### getPost()
+Ottiene il JSON contenente tutti i post del database e passa il risultato alla funzione *makePostBox(data: jsonPost[])* per la visualizzazione sulla pagina.
+
+### getPostsByHashtag(e: Event)
+Funzione lanciata quando dall'evento 'click' sul pulsante "Cerca". Effettua una chiamata di ricerca passando a parametro la lista degli Hasthtag passata del form adiacente. 
+Gli hashtag vengono divisi indicando uno spazio tra uno e l'altro. Il risultato alla funzione *makePostBox(data: jsonPost[])* per la visualizzazione sulla pagina.
+
+### function makePostBox(data: jsonPost[]) 
