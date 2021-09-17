@@ -54,7 +54,16 @@ Le chiamate vengono gestite dal metodo asincrono fetch() che restituisce una pro
 Ottiene il JSON contenente tutti i post del database e passa il risultato alla funzione *makePostBox(data: jsonPost[])* per la visualizzazione sulla pagina.
 
 ### getPostsByHashtag(e: Event)
-Funzione lanciata quando dall'evento 'click' sul pulsante "Cerca". Effettua una chiamata di ricerca passando a parametro la lista degli Hasthtag passata del form adiacente. 
+Funzione lanciata dall'evento 'submit' sul pulsante "Cerca". Effettua una chiamata di ricerca passando a parametro la lista degli Hasthtag passata del form adiacente. 
 Gli hashtag vengono divisi indicando uno spazio tra uno e l'altro. Il risultato alla funzione *makePostBox(data: jsonPost[])* per la visualizzazione sulla pagina.
 
-### function makePostBox(data: jsonPost[]) 
+### makePostBox(data: jsonPost[]) 
+Crea una lista di oggetti html di classe *Postbox* che contengono ognuno le informazioni di un singolo post, più il tasto per la sua cancellazione. 
+
+### publicPost(e: Event)
+Funzione lanciata dall'evento 'submit' sul pulsante "Pubblica". Effettua una chiamata passando a parametro gli elementi del form sovrastante. Ricarica la pagina al completamento della richiesta.
+
+*Attenzione: I post totalmente vuoti sono contemplati e non restituiscono errore, e possono essere cancellati normalmente*
+
+### deletePost(e: Event)
+Funzione lanciata all'evento "click" sul pulsante 'X' dei singoli Postbox. Chiama una funzione di delete dell'oggetto dal database, passando l'id del post. Ricarica la pagina al completamento della richiesta.
