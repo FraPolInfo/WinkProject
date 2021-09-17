@@ -14,7 +14,7 @@ Npm run dev
 ```
 Le librerie utilizzate per MondoDB ed Express sono gestite automaticamente da npm dal file *package.json* e non devono essere scaricate separatamente.
 ## Overwiev 
-Questo progetto relizza un servizio di backend basato su api restful. 
+Questo progetto relizza un servizio basato su api restful. 
 
 Il file *index.js* contiene la configurazione di express per l'ascolto e il routing delle chiamate Http.
 
