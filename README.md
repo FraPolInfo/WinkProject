@@ -10,7 +10,7 @@ npm install -g typescript
 ```
 Una volta installato è sufficiente raggiungere la cartella in cui è stato clonato il progetto e lanciare il comando
 ```
-Npm run dev
+node index.js
 ```
 Le librerie utilizzate per MondoDB ed Express sono gestite automaticamente da npm dal file *package.json* e non devono essere scaricate separatamente.
 ## Overwiev 
